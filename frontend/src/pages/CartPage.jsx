@@ -28,6 +28,10 @@ const CartPage = () => {
     dispatch(removeFromCart(id));
   };
 
+  const checkoutHandler = () => {
+    navigate("/login?redirect=/shipping");
+  };
+
   return (
     <Row>
       <Col md={8}>
