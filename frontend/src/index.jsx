@@ -21,6 +21,7 @@ import RegisterPage from "./pages/RegisterPage";
 import ShippingPage from "./pages/ShippingPage";
 import PrivateRoute from "./components/PrivateRoute";
 import PaymentPage from "./pages/PaymentPage";
+import PlaceOrderPage from "./pages/PlaceOrderPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -36,6 +37,7 @@ const router = createBrowserRouter(
       <Route path="" element={<PrivateRoute />}>
         <Route path="/shipping" element={<ShippingPage />} />
         <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/placeorder" element={<PlaceOrderPage />} />
       </Route>
     </Route>
   )

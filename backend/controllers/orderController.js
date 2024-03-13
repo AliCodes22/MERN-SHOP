@@ -1,4 +1,4 @@
-import asyncHandler from "../middleware/asyncHandler";
+import asyncHandler from "../middleware/asyncHandler.";
 import Order from "../models/orderModel";
 
 const addOrderItems = asyncHandler(async (req, res) => {
