@@ -31,19 +31,15 @@ const LoginPage = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-
     try {
-      const res = await login({
-        email,
-        password,
-      }).unwrap();
-
+      const res = await login({ email, password }).unwrap();
       dispatch(setCredentials({ ...res }));
       navigate(redirect);
-    } catch (error) {
-      toast.error(error.data.message || error.error);
+    } catch (err) {
+      toast.error(err?.data?.message || err.error);
     }
   };
+
   return (
     <FormContainer>
       <h1>Sign In</h1>

@@ -1,5 +1,5 @@
-import asyncHandler from "../middleware/asyncHandler.";
-import Order from "../models/orderModel";
+import asyncHandler from "../middleware/asyncHandler.js";
+import Order from "../models/orderModel.js";
 
 const addOrderItems = asyncHandler(async (req, res) => {
   const {
@@ -12,25 +12,25 @@ const addOrderItems = asyncHandler(async (req, res) => {
     totalPrice,
   } = req.body;
 
-  if (orderItems && orderItems.length === 0) {
-    res.status(400).json;
-    throw new Error("no order items");
-  } else {
-    const order = new Order({
-      orderItems: orderItems.map((order) => ({
-        ...order,
-        product: order._id,
-        _id: undefined,
-      })),
-      user: req.user._id,
-      shippingAddress,
-      paymentMethod,
-      itemsPrice,
-      taxPrice,
-      shippingPrice,
-      totalPrice,
-    });
+  if (!orderItems || orderItems.length === 0) {
+    res.status(400);
+    throw new Error("No order items");
   }
+
+  const order = new Order({
+    orderItems: orderItems.map((item) => ({
+      ...item,
+      product: item._id, // Assuming each order item has an _id
+      _id: undefined,
+    })),
+    user: req.user._id,
+    shippingAddress,
+    paymentMethod,
+    itemsPrice,
+    taxPrice,
+    shippingPrice,
+    totalPrice,
+  });
 
   const createdOrder = await order.save();
 
