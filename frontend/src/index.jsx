@@ -3,7 +3,9 @@ import ReactDOM from "react-dom/client";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/styles/bootstrap.custom.css";
 import "./assets/styles/index.css";
+
 import App from "./App";
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -13,6 +15,7 @@ import {
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { store } from "../src/store";
 import { Provider } from "react-redux";
 import CartPage from "./pages/CartPage";
@@ -47,7 +50,9 @@ const router = createBrowserRouter(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <PayPalScriptProvider deferLoading={true}>
+        <RouterProvider router={router} />
+      </PayPalScriptProvider>
     </Provider>
   </React.StrictMode>
 );
