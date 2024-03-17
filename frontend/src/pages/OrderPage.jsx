@@ -19,7 +19,7 @@ import {
   usePayOrderMutation,
   useGetPayPalClientIdQuery,
 } from "../slices/ordersApiSlice";
-import { useSelector, useDispatch } from "@reduxjs/toolkit";
+import { useSelector, useDispatch } from "react-redux";
 import { useGetProductsQuery } from "../slices/productSlice";
 
 const OrderPage = () => {
@@ -31,9 +31,9 @@ const OrderPage = () => {
     isLoading,
     error,
   } = useGetOrderDetailsQuery(orderId);
-  const [payOrder, { isError, isLoading: loadingPay }] = usePayOrderMutation();
+  const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation();
 
-  const [{ isPending }, payPalDispatch] = usePayPalScriptReducer;
+  const [{ isPending }, payPalDispatch] = usePayPalScriptReducer();
 
   const {
     data: paypal,
@@ -62,7 +62,7 @@ const OrderPage = () => {
         }
       }
     }
-  }, [order, paypal]);
+  }, [order, paypal, errorPayPal, loadingPayPal, payPalDispatch]);
 
   const onApprove = (data, actions) => {
     return actions.order.capture().then(async function (details) {
