@@ -1,14 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
-import {
-  Row,
-  Col,
-  ListGroup,
-  Image,
-  Form,
-  Button,
-  Card,
-} from "react-bootstrap";
+import { Row, Col, ListGroup, Image, Button, Card } from "react-bootstrap";
 import { toast } from "react-toastify";
 
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
@@ -21,7 +13,7 @@ import {
   useDeliverOrderMutation,
 } from "../slices/ordersApiSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useGetProductsQuery } from "../slices/productSlice";
+import { useGetProductsQuery } from "../slices/productsSlice";
 
 const OrderPage = () => {
   const { id: orderId } = useParams();

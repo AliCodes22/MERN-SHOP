@@ -8,7 +8,7 @@ import {
   Button,
   Form,
 } from "react-bootstrap";
-import { useGetSingleProductQuery } from "../slices/productSlice";
+import { useGetSingleProductQuery } from "../slices/productsSlice";
 import Loader from "../components/Loader";
 import Rating from "../components/Rating";
 import { useDispatch } from "react-redux";
