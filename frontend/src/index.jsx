@@ -32,7 +32,7 @@ import OrderListPage from "./pages/admin/OrderListPage";
 import ProductListPage from "./pages/admin/ProductListPage";
 import ProductEditPage from "./pages/admin/ProductEditPage";
 import UserListPage from "./pages/admin/UserListPage";
-
+import UserEditPage from "./pages/admin/UserEditPage";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const router = createBrowserRouter(
@@ -57,6 +57,7 @@ const router = createBrowserRouter(
         <Route path="/admin/productlist" element={<ProductListPage />} />
         <Route path="/admin/product/:id/edit" element={<ProductEditPage />} />
         <Route path="/admin/userlist" element={<UserListPage />} />{" "}
+        <Route path="/admin/user/:id/edit" element={<UserEditPage />} />
       </Route>
     </Route>
   )
