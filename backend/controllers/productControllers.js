@@ -16,9 +16,19 @@ const getSingleProduct = asyncHandler(async (req, res) => {
 });
 
 const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find();
+  const pageSize = 2;
+  const page = Number(req.query.number) || 1;
+  const count = await Product.countDocuments();
 
-  res.status(200).json(products);
+  const products = await Product.find()
+    .limit(pageSize)
+    .skip(pageSize * (page - 1));
+
+  res.status(200).json({
+    products,
+    page,
+    pages: Math.ceil(count / pageSize),
+  });
 });
 
 const createProduct = asyncHandler(async (req, res) => {
