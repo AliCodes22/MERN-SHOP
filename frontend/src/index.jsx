@@ -38,7 +38,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="/page/:number" element={<HomePage />} />
+      <Route path="/page/:pageNumber" element={<HomePage />} />
       <Route path="/" index={true} element={<HomePage />} />
       <Route path="/product/:id" element={<ProductPage />} />
       <Route path="/cart" element={<CartPage />} />
@@ -56,6 +56,10 @@ const router = createBrowserRouter(
       <Route path="" element={<AdminRoute />}>
         <Route path="/admin/orderlist" element={<OrderListPage />} />
         <Route path="/admin/productlist" element={<ProductListPage />} />
+        <Route
+          path="/admin/productlist/:pageNumber"
+          element={<ProductListPage />}
+        />
         <Route path="/admin/product/:id/edit" element={<ProductEditPage />} />
         <Route path="/admin/userlist" element={<UserListPage />} />{" "}
         <Route path="/admin/user/:id/edit" element={<UserEditPage />} />
