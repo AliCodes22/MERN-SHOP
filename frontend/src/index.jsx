@@ -18,6 +18,7 @@ import ProductPage from "./pages/ProductPage";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { store } from "../src/store";
 import { Provider } from "react-redux";
+import { HelmetProvider } from "react-helmet-async";
 import CartPage from "./pages/CartPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
@@ -33,6 +34,7 @@ import ProductListPage from "./pages/admin/ProductListPage";
 import ProductEditPage from "./pages/admin/ProductEditPage";
 import UserListPage from "./pages/admin/UserListPage";
 import UserEditPage from "./pages/admin/UserEditPage";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const router = createBrowserRouter(
@@ -69,10 +71,12 @@ const router = createBrowserRouter(
 );
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <PayPalScriptProvider deferLoading={true}>
-        <RouterProvider router={router} />
-      </PayPalScriptProvider>
-    </Provider>
+    <HelmetProvider>
+      <Provider store={store}>
+        <PayPalScriptProvider deferLoading={true}>
+          <RouterProvider router={router} />
+        </PayPalScriptProvider>
+      </Provider>
+    </HelmetProvider>
   </React.StrictMode>
 );

@@ -5,6 +5,7 @@ import Loader from "../components/Loader";
 import { useParams } from "react-router-dom";
 import Paginate from "../components/Paginate";
 import ProductCarousel from "../components/ProductCarousel";
+import Meta from "../components/Meta";
 
 const HomePage = () => {
   const { pageNumber } = useParams();
@@ -19,6 +20,7 @@ const HomePage = () => {
         <Loader />
       ) : (
         <>
+          <Meta />
           <h1>Products</h1>
           <Row>
             {data.products.map((product) => {

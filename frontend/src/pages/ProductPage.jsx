@@ -19,6 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../slices/cartSlice";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import Meta from "../components/Meta";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -83,6 +84,11 @@ const ProductPage = () => {
         <Loader />
       ) : (
         <>
+          <Meta
+            title={product.name}
+            description={product.description}
+            keywords={product.category}
+          />
           <Row>
             <Col md={5}>
               <Image src={product.image} alt={product.name} fluid />
