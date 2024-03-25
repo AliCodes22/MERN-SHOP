@@ -4,16 +4,17 @@ import { useGetProductsQuery } from "../slices/productsSlice";
 import Loader from "../components/Loader";
 import { useParams } from "react-router-dom";
 import Paginate from "../components/Paginate";
+import ProductCarousel from "../components/ProductCarousel";
 
 const HomePage = () => {
-  const { pageNumber, keyword } = useParams();
+  const { pageNumber } = useParams();
   const { data, isLoading, error } = useGetProductsQuery({
-    keyword,
     pageNumber,
   });
 
   return (
     <>
+      <ProductCarousel />
       {isLoading ? (
         <Loader />
       ) : (
