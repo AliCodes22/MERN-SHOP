@@ -1,53 +1,92 @@
-main {
-  min-height: 80vh;
+/* Set a more visually appealing background color */
+body {
+  background-color: #f8f9fa;
 }
 
+/* Increase the minimum height of the main content area */
+main {
+  min-height: 90vh; /* Increase to provide more space */
+}
+
+/* Update color and spacing for the rating stars */
 .rating span {
-  margin: 0.1rem;
+  margin: 0.2rem; /* Increase spacing */
 }
 
 .rating svg {
-  color: #f8e825;
+  color: #ffc107; /* Use a brighter yellow color */
 }
 
+/* Adjust font size and weight for the rating text */
 .rating-text {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 1rem; /* Increase font size */
+  font-weight: 500; /* Adjust font weight */
   padding-left: 0.5rem;
 }
 
+/* Update styling for product titles */
 .product-title {
-  height: 2.5em; /* Set a fixed height */
-  overflow: hidden; /* Hide overflow content */
-  text-overflow: ellipsis; /* Add ellipsis for long text */
-  white-space: nowrap; /* Prevent wrapping */
+  height: auto; /* Remove fixed height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* Allow wrapping */
+  font-size: 1.2rem; /* Increase font size */
+  font-weight: 600; /* Adjust font weight */
+  color: #333; /* Use a darker color for better contrast */
 }
 
+/* Add spacing to table cells */
 table td,
 table th {
   text-align: center;
+  padding: 0.5rem; /* Add padding for better readability */
 }
 
+/* Update styling for review section */
 .review {
-  margin-top: 30px;
+  margin-top: 40px; /* Increase top margin */
 }
 
 .review h2 {
-  font-size: 24px;
-  background: #f4f4f4;
-  padding: 10px;
-  border: 1px solid #ddd;
+  font-size: 1.5rem; /* Increase font size */
+  background: #ffffff; /* Use a white background */
+  padding: 15px; /* Increase padding */
+  border: 1px solid #e9ecef; /* Use a lighter border color */
 }
 
 .review button {
-  margin-top: 10px;
+  margin-top: 20px; /* Adjust margin */
+  background-color: #007bff; /* Use a primary color for button */
+  color: #fff; /* Use white text color */
+  border: none;
+  padding: 10px 20px; /* Increase padding */
+  font-size: 1rem; /* Adjust font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.review button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Update styling for carousel captions */
 .carousel-caption {
   position: absolute;
   width: 100%;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px; /* Increase padding */
+  color: #fff; /* Use white text color */
+}
+
+.product-card:hover {
+  transform: translateY(-8px); /* Slightly larger hover effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+.cool-hover-effect:hover {
+  color: #c31351;
+  transition: color 0.3s ease;
 }
