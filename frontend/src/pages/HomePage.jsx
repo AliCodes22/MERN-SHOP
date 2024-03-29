@@ -8,8 +8,9 @@ import ProductCarousel from "../components/ProductCarousel";
 import Meta from "../components/Meta";
 
 const HomePage = () => {
-  const { pageNumber } = useParams();
+  const { pageNumber, keyword } = useParams();
   const { data, isLoading, error } = useGetProductsQuery({
+    keyword,
     pageNumber,
   });
 
