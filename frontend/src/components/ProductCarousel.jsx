@@ -23,7 +23,7 @@ const ProductCarousel = () => {
                 alt={product.name}
                 fluid
                 className="d-block w-100"
-                style={{ maxHeight: "400px", objectFit: "cover" }}
+                style={{ maxHeight: "300px", objectFit: "cover" }}
               />
               <Carousel.Caption className="carousel-caption">
                 <h2 className="text-white">{product.name}</h2>

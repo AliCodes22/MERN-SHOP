@@ -8,6 +8,7 @@ import orderRoutes from "./routes/orderRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
+import checkObjectId from "./middleware/checkObjectId.js";
 
 const port = process.env.PORT;
 
