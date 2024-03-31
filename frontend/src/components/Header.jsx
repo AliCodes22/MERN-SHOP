@@ -8,7 +8,6 @@ import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
 import { useNavigate } from "react-router-dom";
 import { resetCart } from "../slices/cartSlice";
-import { reset } from "nodemon";
 
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
